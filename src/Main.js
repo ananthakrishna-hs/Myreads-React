@@ -18,8 +18,7 @@ class Main extends Component {
 
   componentDidMount() {
     BooksAPI.getAll().then((response) => {
-      this.setState({books: response})
-      //response.forEach(element => {console.log(element)})  
+      this.setState({books: response}); 
     })
   }
 
