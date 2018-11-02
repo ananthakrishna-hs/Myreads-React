@@ -26,7 +26,8 @@ body, .app {
   flex: 1;
 }
 
-.bookshelf {
+.bookshelf, 
+.search-books-results {
   padding: 0 10px 20px;
 }
 
@@ -36,10 +37,12 @@ body, .app {
   }
 }
 
-.bookshelf-title {
+.bookshelf-title, 
+.results-title {
   border-bottom: 1px solid #dedede;
 }
-.bookshelf-books {
+.bookshelf-books,
+.results-books {
   text-align: center;
 }
 

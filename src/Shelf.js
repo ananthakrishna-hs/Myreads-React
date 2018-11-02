@@ -26,7 +26,7 @@ class Shelf extends Component {
         default: alert("Invalid shelf name");
       }
     })*/
-    this.setState({books: this.props.bookArray});
+   
   }
 
   render() {
