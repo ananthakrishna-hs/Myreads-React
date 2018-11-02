@@ -129,7 +129,7 @@ input[type=text] {
 .books-list {
   border: 2px solid #3cf;
   border-left: 4px ridge #0fc;
-  margin: 0 10px;
+  margin: 10px;
   border-top-right-radius: 50px;
   border-bottom-right-radius: 50px;
 }
