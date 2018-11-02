@@ -1,16 +1,37 @@
-import React from 'react'
-// import * as BooksAPI from './BooksAPI'
+import React, { Component } from 'react'
+import * as BooksAPI from './BooksAPI'
+import Shelf from './Shelf'
 import './App.css'
 
-class BooksApp extends React.Component {
+class BooksApp extends Component {
   state = {
-    /**
+    books: [],
+    showSearchPage: false
+  }
+  
+  updateShelf = (book, shelfValue) => {
+    BooksAPI.update(book, shelfValue).then(function(res) {
+      BooksAPI.getAll().then((response) => {
+        this.setState({books: response})
+      })
+    }.bind(this)); 
+  }
+  /*state = {
+    **
      * TODO: Instead of using this state variable to keep track of which page
      * we're on, use the URL in the browser's address bar. This will ensure that
      * users can use the browser's back and forward buttons to navigate between
      * pages, as well as provide a good URL they can bookmark and share.
-     */
-    showSearchPage: false
+     *
+    showSearchPage: false,
+    books: []
+}*/
+
+  componentDidMount() {
+    BooksAPI.getAll().then((response) => {
+      this.setState({books: response})
+      //response.forEach(element => {console.log(element)})  
+    })
   }
 
   render() {
@@ -44,7 +65,10 @@ class BooksApp extends React.Component {
             </div>
             <div className="list-books-content">
               <div>
-                <div className="bookshelf">
+                <Shelf shelfName="Currently Reading" bookArray={this.state.books.filter(element => element.shelf==='currentlyReading')} triggerUpdate={this.updateShelf} />
+                <Shelf shelfName="Want to Read" bookArray={this.state.books.filter(element => element.shelf==='wantToRead')} triggerUpdate={this.updateShelf} />
+                <Shelf shelfName="Read" bookArray={this.state.books.filter(element => element.shelf==='read')} triggerUpdate={this.updateShelf} />
+                {/*<div className="bookshelf">
                   <h2 className="bookshelf-title">Currently Reading</h2>
                   <div className="bookshelf-books">
                     <ol className="books-grid">
@@ -190,13 +214,14 @@ class BooksApp extends React.Component {
                       </li>
                     </ol>
                   </div>
-                </div>
+                </div>*/}
               </div>
             </div>
             <div className="open-search">
               <a onClick={() => this.setState({ showSearchPage: true })}>Add a book</a>
             </div>
           </div>
+          
         )}
       </div>
     )
