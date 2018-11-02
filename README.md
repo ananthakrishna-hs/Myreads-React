@@ -8,6 +8,7 @@ This projects makes use of ReactJS v16 and Udacity's BookAPI to create a virtual
 - Currently Reading.
 - Want to Read.
 - Read.
+
 Users can perform dynamic searching from the search API to get wide range of books.
 
 Features of the app: 
