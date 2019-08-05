@@ -35,9 +35,6 @@ Features of the app:
 ### Installation/Development
 - Download/clone the repository.
 - Download the node package manager as per requirements and run `npm install` in terminal.
-- Install the react-app using command `npm install create-react-app`
-- Install the dependencies:
-    - `npm install --save react-router-dom`
 - In terminal change directory to the downloaded folder and run `npm start`. The web-app will run at the url `localhost:3000`.
 
 
