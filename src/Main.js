@@ -9,11 +9,11 @@ class Main extends Component {
   }
 
   updateShelf = (book, shelfValue) => {
-    BooksAPI.update(book, shelfValue).then(function(res) {
+    BooksAPI.update(book, shelfValue).then( res => {
       BooksAPI.getAll().then((response) => {
         this.setState({books: response})
       })
-    }.bind(this)); 
+    }); 
   }
 
   componentDidMount() {
@@ -26,7 +26,7 @@ class Main extends Component {
     return (
       <div className="list-books">
         <div className="list-books-title">
-          <h1>MyReads</h1>
+          <h1>Digital Bhandara</h1>
         </div>
         <div className="list-books-content">
           <div>
