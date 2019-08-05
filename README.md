@@ -24,6 +24,7 @@ Features of the app:
 - ReactJS and its libraries:
     - react-dom
     - react-router-dom
+    - escape-string-regexp
 
 ## Setup
 
