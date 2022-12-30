@@ -14,7 +14,7 @@
   "devDependencies": {
     "eslint": "^5.16.0",
     "mixin-deep": "^2.0.1",
-    "react-scripts": "^3.0.1",
+    "react-scripts": "^5.0.1",
     "set-value": "^3.0.1",
     "typescript": "^3.5.3"
   },
